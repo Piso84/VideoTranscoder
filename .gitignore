@@ -1,0 +1,9 @@
+.python/
+.venv/
+.uv-cache/
+
+# Contenuti di input e output (le cartelle restano, i file no)
+/input/*
+/output/*
+!/input/.gitkeep
+!/output/.gitkeep

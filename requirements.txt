@@ -1,0 +1,43 @@
+# IMPORTANTE: av è già installato manualmente, non includerlo qui
+
+# Numpy DEVE essere < 2.0 per compatibilità con numba/librosa
+numpy==1.26.4
+
+# PyTorch CPU (versione standard da PyPI)
+torch==2.2.0
+torchaudio==2.2.0
+
+# Numba (dipende da numpy)
+numba>=0.57.0,<0.64.0
+
+# Core dependencies - versioni compatibili tra loro
+faster-whisper==1.0.3
+tokenizers==0.15.2
+transformers==4.36.2
+
+# Pyannote
+pyannote.audio==3.3.2
+
+# FFmpeg wrapper
+ffmpeg-python==0.2.0
+
+# Dipendenze scientifiche
+scipy==1.11.4
+
+# Hugging Face
+huggingface-hub==0.23.0
+
+# ONNX Runtime
+onnxruntime==1.16.3
+
+# SpeechBrain
+speechbrain==1.0.0
+
+# Altre dipendenze comuni
+librosa>=0.10.0
+soundfile>=0.12.0
+pandas>=2.0.0
+
+# Utilità
+python-dotenv==1.0.0
+tqdm>=4.65.0
