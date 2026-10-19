@@ -1,4 +1,4 @@
------ istruzioni installazione su Linux -----
+----- istruzioni installazione su Linux (seguire un passo alla volta) -----
 
 setopt interactive_comments
 
@@ -14,13 +14,13 @@ export UV_CACHE_DIR="$PWD/.uv-cache"
 uv python install 3.11
 
 # Crea il venv usando quell'interprete
-uv venv --python 3.11 .venv
+sudo uv venv --python 3.11 .venv
 
 # Attivalo
 source .venv/bin/activate
 
 # Installa le dipendenze
-uv pip install -r requirements.txt
+sudo uv pip install -r requirements.txt
 
 #Per non riesportare le variabili a ogni sessione, crea un env.sh:
 cat > env.sh << 'EOF'

@@ -7,3 +7,6 @@
 /output/*
 !/input/.gitkeep
 !/output/.gitkeep
+.python/
+.venv/
+.uv-cache/
