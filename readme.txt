@@ -32,10 +32,11 @@ EOF
 #Evita di versionare le cartelle generate:
 printf '.python/\n.venv/\n.uv-cache/\n' >> .gitignore
 
-uv pip list | grep -i onnxruntime
-uv pip install -U onnxruntime
+sudo uv pip list | grep -i onnxruntime
+sudo uv pip install -U onnxruntime
 
-uv pip install "numpy<2"
+sudo uv pip install "numpy<2"
+
 python -c "import numpy; print(numpy.__version__)"
 python -c "import onnxruntime; print(onnxruntime.__version__)"
 
