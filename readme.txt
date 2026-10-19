@@ -6,6 +6,8 @@ sudo pacman -S uv ffmpeg
 
 cd ~/Scrivania/CallTranscoder
 
+sudo chown -R marco:marco .
+
 # Tutto resta dentro la cartella di progetto
 export UV_PYTHON_INSTALL_DIR="$PWD/.python"
 export UV_CACHE_DIR="$PWD/.uv-cache"
@@ -14,13 +16,13 @@ export UV_CACHE_DIR="$PWD/.uv-cache"
 uv python install 3.11
 
 # Crea il venv usando quell'interprete
-sudo uv venv --python 3.11 .venv
+uv venv --python 3.11 .venv
 
 # Attivalo
 source .venv/bin/activate
 
 # Installa le dipendenze
-sudo uv pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 #Per non riesportare le variabili a ogni sessione, crea un env.sh:
 cat > env.sh << 'EOF'
@@ -29,16 +31,9 @@ export UV_CACHE_DIR="$PWD/.uv-cache"
 source .venv/bin/activate
 EOF
 
-#Evita di versionare le cartelle generate:
-printf '.python/\n.venv/\n.uv-cache/\n' >> .gitignore
-
-sudo uv pip list | grep -i onnxruntime
-sudo uv pip install -U onnxruntime
-
-sudo uv pip install "numpy<2"
-
-python -c "import numpy; print(numpy.__version__)"
-python -c "import onnxruntime; print(onnxruntime.__version__)"
+uv pip list | grep -i onnxruntime
+uv pip install -U onnxruntime
+uv pip install "numpy<2"
 
 ---
 
